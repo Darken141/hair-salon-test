@@ -1,0 +1,42 @@
+.service-section-styles {
+    padding: 10rem 3rem;
+
+    @media all and (max-width: 768px) {
+        @media all and (max-width: 480px) {
+            padding: 10rem 1rem;
+        }
+    }
+}
+
+.row-styles {
+    position: relative;
+    display: flex;
+    
+    &:nth-child(odd) {
+        justify-content: flex-end;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 10rem;
+    }
+}
+.container-styles {
+    max-width: 52rem;
+    background-color: #fff;
+    border-radius: .3rem;
+    padding: 3rem;
+    box-shadow: 15px 30px 60px 0px rgba(138,149,158,0.2);
+
+
+    h3 {
+        text-transform: uppercase;
+        font-size: 2.5rem;
+        margin-bottom: .5rem;
+    }
+
+    p {
+        &:not(:last-child){
+            margin-bottom: 1rem;
+        }
+    }
+}

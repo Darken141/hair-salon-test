@@ -1,0 +1,52 @@
+.drawer-styles {
+    display: none;
+    
+    @media all and (max-width: 768px){
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 22rem;
+        height: 100vh;
+        background-color: #fff;
+        z-index: 99999;
+        padding: 2rem;
+        animation: slideIn .5s 0s linear;
+    }
+}
+
+.airdrop-styles {
+    display: none;
+
+        @media all and (max-width: 768px){
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(#000, 0.25);
+        z-index: 99998;
+        animation: fadeIn .5s 0s linear;
+
+    }
+}
+
+
+@keyframes slideIn{
+    0%{
+        transform: translateX(300px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

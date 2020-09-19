@@ -1,0 +1,82 @@
+.footer-styles {
+    position: relative;
+    padding: 5rem 3rem;
+    background-color: #171717;
+    color: #fff;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    @media all and (max-width: 768px) {
+        @media all and (max-width: 480px) {
+            padding: 5rem 1rem;
+        }
+    }
+
+    div {
+        margin-bottom: 5rem;
+
+        &:nth-child(3) {
+            div {
+                margin: 0;
+                label {
+                    color: #fff !important;
+                }
+                input {
+                    background-color: #333;
+                }
+
+            }
+            button {
+                background-color: #fff ;
+                color: #000;
+
+                &:hover {
+                    background-color: darken(#fff, 25) ;
+
+                }
+            }
+        }
+
+        address {
+            a {
+                color: #fff;
+            }
+        }
+
+        @media all and (max-width: 768px) {
+            @media all and (max-width: 480px) {
+                width: 100%;
+            }
+        }
+    }
+
+    h4 {
+        text-transform: uppercase;
+        margin-bottom: .5rem;
+    }
+
+    ul {
+        // list-style: none;
+        li {
+            margin-left: 1.75rem;
+            margin-bottom: .2rem;
+
+            button {
+                cursor: pointer;
+                border: none;
+                font-family: inherit;
+                font-size: inherit;
+                background-color: transparent;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.watermark {
+    position: absolute;
+    bottom:  2rem;
+    opacity: .15;
+    font-size: 2.5rem;
+}

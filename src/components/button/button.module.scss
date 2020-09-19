@@ -1,0 +1,14 @@
+.button-styles {
+    cursor: pointer;
+    padding: .8rem 1.8rem;
+    border: none;
+    background-color: #000;
+    color: #FFF;
+    font-family: inherit;
+    font-size: 1.8rem;
+
+    &:hover {
+        background-color: lighten(#333, 15);
+
+    }
+}

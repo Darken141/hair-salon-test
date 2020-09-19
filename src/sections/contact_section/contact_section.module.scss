@@ -1,0 +1,27 @@
+.contact-section-styles {
+    padding: 0 3rem 10rem;
+
+    h2 {
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 7rem;
+        font-weight: 400;
+        font-size: 3.5rem;
+    }
+
+    form {
+        width: 100%;
+        max-width: 60rem;
+        background-color: #fff;
+        padding: .5rem 2.5rem 4rem;
+        margin: 0 auto;
+        box-shadow: 15px 30px 60px 0px rgba(138,149,158,0.2);
+        border-radius: .3rem;
+
+    }
+    @media all and (max-width: 768px) {
+        @media all and (max-width: 480px) {
+            padding: 0 1rem 10rem;
+        }
+    }
+}
