@@ -21,9 +21,13 @@ const Header = () => {
     }
   `)
 
-  const [prevScrollpos, setPrevScrollpos] = useState(window.pageYOffset)
+  const [prevScrollpos, setPrevScrollpos] = useState(null)
   const [showNav, setShowNav] = useState(true)
   const [showDrawer, setShowDrawer] = useState(false)
+
+  useEffect(() => {
+    setPrevScrollpos(window.pageYOffset)
+  }, [])
 
   useEffect(() => {
     window.onscroll = () => {
