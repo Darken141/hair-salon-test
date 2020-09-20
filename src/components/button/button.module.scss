@@ -2,13 +2,14 @@
     cursor: pointer;
     padding: .8rem 1.8rem;
     border: none;
-    background-color: #000;
-    color: #FFF;
+    background-color: #b8d2c2ff;
+    color: #000;
     font-family: inherit;
     font-size: 1.8rem;
+    transition: all 0.2s ease-in-out;
 
     &:hover {
-        background-color: lighten(#333, 15);
+        background-color: darken(#b8d2c2ff, 25);
 
     }
 }

@@ -45,7 +45,7 @@ const Header = () => {
     <React.Fragment>
       <header className={showNav ? showStyles : hideStyles}>
         <div className={logoContainerStyles}>
-          Logo
+          DreadSalon
         </div>
         <nav className={navBarStyles}>
           <ul>
@@ -57,7 +57,7 @@ const Header = () => {
               ))
             }
             <li>
-              <button onClick={() => scrollTo("#kontakt")} className={ctaStyles}>Objednat sa</button>
+              <button onClick={() => scrollTo("#kontakt")} className={ctaStyles}>Objednať sa</button>
             </li>
           </ul>
         </nav>

@@ -1,94 +1,53 @@
 import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import Image from 'gatsby-image'
 
-import { serviceSectionStyles, containerStyles, rowStyles } from './service_section.module.scss'
+
+import { serviceSectionStyles, containerStyles, rowStyles, imageContainerStyles } from './service_section.module.scss'
 
 const ServiceSection = () => {
+    const { allFile: { nodes } } = useStaticQuery(graphql`
+    {
+      allFile(filter: {relativeDirectory: {eq: "services"}}) {
+        nodes {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid_tracedSVG
+            }
+          }
+        }
+      }
+    }
+  `)
+
+
     return (
         <section id="services" className={serviceSectionStyles}>
-            <div className={rowStyles}>
+            {
+                nodes.map((node) => {
+                    console.log(node)
 
-                <div className={containerStyles}>
-                    <div>
-                        <h3>1. Haircuts</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quaerat, facilis rem debitis ad, nemo similique fugiat, numquam magnam alias optio id. Odit possimus laudantium iste ratione ipsum ad nesciunt.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, maxime?
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div className={rowStyles}>
+                    return (
+                        <div className={rowStyles}>
+                            <div className={imageContainerStyles}>
+                                <Image fluid={node.childImageSharp.fluid} />
+                            </div>
+                            <div className={containerStyles}>
+                                <div>
+                                    <h3>Lorem, ipsum dolor.</h3>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quaerat, facilis rem debitis ad, nemo similique fugiat, numquam magnam alias optio id. Odit possimus laudantium iste ratione ipsum ad nesciunt.
+                                    </p>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, maxime?
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
-                <div className={containerStyles}>
-                    <div>
-                        <h3>2. Haircuts</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quaerat, facilis rem debitis ad, nemo similique fugiat, numquam magnam alias optio id. Odit possimus laudantium iste ratione ipsum ad nesciunt.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, maxime?
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div className={rowStyles}>
-
-                <div className={containerStyles}>
-                    <div>
-                        <h3>3. Haircuts</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quaerat, facilis rem debitis ad, nemo similique fugiat, numquam magnam alias optio id. Odit possimus laudantium iste ratione ipsum ad nesciunt.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, maxime?
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div className={rowStyles}>
-
-                <div className={containerStyles}>
-                    <div>
-                        <h3>4. Haircuts</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quaerat, facilis rem debitis ad, nemo similique fugiat, numquam magnam alias optio id. Odit possimus laudantium iste ratione ipsum ad nesciunt.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, maxime?
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div className={rowStyles}>
-
-                <div className={containerStyles}>
-                    <div>
-                        <h3>5. Haircuts</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quaerat, facilis rem debitis ad, nemo similique fugiat, numquam magnam alias optio id. Odit possimus laudantium iste ratione ipsum ad nesciunt.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, maxime?
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div className={rowStyles}>
-
-                <div className={containerStyles}>
-                    <div>
-                        <h3>6. Haircuts</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quaerat, facilis rem debitis ad, nemo similique fugiat, numquam magnam alias optio id. Odit possimus laudantium iste ratione ipsum ad nesciunt.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, maxime?
-                        </p>
-                    </div>
-                </div>
-            </div>
+                    )
+                })
+            }
 
         </section>
     )

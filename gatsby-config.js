@@ -14,6 +14,11 @@ module.exports = {
         id: 2,
         name: "Služby",
         slug: "#services"
+      },
+      {
+        id: 3,
+        name: "Recenzie",
+        slug: "#testimonials"
       }
     ]
   },
@@ -36,6 +41,14 @@ module.exports = {
         name: `backgrounds`,
         path: `${__dirname}/src/bg`, // wherever background images are stored
       },
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /images/
+        }
+      }
     },
     {
       resolve: `gatsby-plugin-manifest`,

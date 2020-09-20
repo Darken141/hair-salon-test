@@ -1,7 +1,9 @@
 .drawer-styles {
     display: none;
+    visibility: hidden;
     
     @media all and (max-width: 768px){
+        visibility: visible;
         display: block;
         position: fixed;
         top: 0;
@@ -17,8 +19,10 @@
 
 .airdrop-styles {
     display: none;
+    visibility: hidden;
 
         @media all and (max-width: 768px){
+        visibility: visible;
         display: block;
         position: fixed;
         top: 0;

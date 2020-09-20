@@ -1,0 +1,44 @@
+.featured-services-styles {
+        padding: 10rem 3rem 0;
+
+    @media all and (max-width: 768px) {
+        @media all and (max-width: 480px) {
+            padding: 10rem 1rem;
+        }
+    }
+}
+
+.row-styles {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    div {
+        cursor: default;
+        width: 30rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10rem;
+        background-color: #fff;
+        border-radius: .5rem;
+        padding: 4rem 2rem;
+        box-shadow: 15px 30px 60px 0px rgba(138,149,158,0.2);
+
+
+        svg {
+            width: 10rem;
+            height: 10rem;
+            margin-bottom: 2rem;
+        }
+
+        h4 {
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            text-align: center;
+        }
+    }
+}

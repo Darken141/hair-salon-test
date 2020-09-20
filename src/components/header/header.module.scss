@@ -76,8 +76,9 @@
 
 .cta-styles {
     cursor: pointer;
-    background-color: #333;
-    color: #fff;
+    background-color: #b8d2c2ff;
+    // border: 2px solid #cb6665ff;
+    color: #000;
     padding: 0.8rem 1.2rem;
     border-radius: .3rem;
     text-decoration: none;
@@ -85,11 +86,12 @@
     transition: background-color 0.2s ease-in-out;
     font-family: inherit;
     font-size: inherit;
-
+    font-weight: 700;
     border: none;
+    text-transform: uppercase;
     
     &:hover {
-        background-color: lighten(#333, 15);
+        background-color: darken(#b8d2c2ff, 15);
     }
 }
 
