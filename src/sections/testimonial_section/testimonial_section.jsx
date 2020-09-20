@@ -9,7 +9,7 @@ const TestimonialSection = () => {
 
     return (
         <section id='testimonials' className={testimonialSectionStyles}>
-            <h2>Zajednajte si u nás termín</h2>
+            <h2>Lorem ipsum dolor sit amet.</h2>
 
             <div className={rowStyles}>
                 <div className={cardStyles}>

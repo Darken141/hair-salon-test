@@ -6,7 +6,7 @@ import Image from 'gatsby-image'
 import { serviceSectionStyles, containerStyles, rowStyles, imageContainerStyles } from './service_section.module.scss'
 
 const ServiceSection = () => {
-    const { allFile: { nodes } } = useStaticQuery(graphql`
+  const { allFile: { nodes } } = useStaticQuery(graphql`
     {
       allFile(filter: {relativeDirectory: {eq: "services"}}) {
         nodes {
@@ -21,36 +21,34 @@ const ServiceSection = () => {
   `)
 
 
-    return (
-        <section id="services" className={serviceSectionStyles}>
-            {
-                nodes.map((node) => {
-                    console.log(node)
-
-                    return (
-                        <div className={rowStyles}>
-                            <div className={imageContainerStyles}>
-                                <Image fluid={node.childImageSharp.fluid} />
-                            </div>
-                            <div className={containerStyles}>
-                                <div>
-                                    <h3>Lorem, ipsum dolor.</h3>
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quaerat, facilis rem debitis ad, nemo similique fugiat, numquam magnam alias optio id. Odit possimus laudantium iste ratione ipsum ad nesciunt.
+  return (
+    <section id="services" className={serviceSectionStyles}>
+      {
+        nodes.map((node, idx) => {
+          return (
+            <div key={idx} className={rowStyles}>
+              <div className={imageContainerStyles}>
+                <Image fluid={node.childImageSharp.fluid} />
+              </div>
+              <div className={containerStyles}>
+                <div>
+                  <h3>Lorem, ipsum dolor.</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quaerat, facilis rem debitis ad, nemo similique fugiat, numquam magnam alias optio id. Odit possimus laudantium iste ratione ipsum ad nesciunt.
                                     </p>
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, maxime?
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, maxime?
                                     </p>
-                                </div>
-                            </div>
-                        </div>
+                </div>
+              </div>
+            </div>
 
-                    )
-                })
-            }
+          )
+        })
+      }
 
-        </section>
-    )
+    </section>
+  )
 }
 
 export default ServiceSection

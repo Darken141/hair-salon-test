@@ -14,6 +14,60 @@
         z-index: 99999;
         padding: 2rem;
         animation: slideIn .5s 0s linear;
+
+        
+        ul {
+            list-style: none;
+
+            li {
+                margin-bottom: .5rem;
+                text-align: center;
+
+                .nav-item-styles {
+                    cursor: pointer;
+                    font-family: inherit;
+                    font-size: inherit;
+                    border: none;
+                    background-color: transparent;
+                    text-decoration: none;
+                    color: #000;
+                    transition: all 0.2s ease-in-out;
+                    border-bottom: 1px solid transparent;
+
+                    &:focus {
+                        outline: none;
+                        color: lighten(#000, 50);
+                        border-bottom: 1px solid lighten(#000, 50);
+                    }
+
+                    &:hover {
+                        color: lighten(#000, 50);
+                        border-bottom: 1px solid lighten(#000, 50);
+                    }
+                }
+
+                .cta-styles {
+                    cursor: pointer;
+                    background-color: #b8d2c2ff;
+                    // border: 2px solid #cb6665ff;
+                    color: #000;
+                    padding: 0.8rem 1.2rem;
+                    border-radius: .3rem;
+                    text-decoration: none;
+                    // text-transform: uppercase;
+                    transition: background-color 0.2s ease-in-out;
+                    font-family: inherit;
+                    font-size: inherit;
+                    font-weight: 700;
+                    border: none;
+                    text-transform: uppercase;
+                    
+                    &:hover {
+                        background-color: darken(#b8d2c2ff, 15);
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -32,6 +86,7 @@
         background-color: rgba(#000, 0.25);
         z-index: 99998;
         animation: fadeIn .5s 0s linear;
+
 
     }
 }
