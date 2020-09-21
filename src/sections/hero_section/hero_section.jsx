@@ -6,6 +6,22 @@ import { heroSectionStyles, headingContainerStyles, backgroundSliderStyles } fro
 import CustomButton from '../../components/button/button'
 
 const HeroSection = () => {
+    const heroHeadings = [
+        {
+            heading: "You’ll love what you see.",
+            subHeading: "Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo."
+        },
+        {
+            heading: "It’s your time to shine.",
+            subHeading: "Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi."
+        },
+        {
+            heading: "Reveal your true self. ",
+            subHeading: "Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion."
+        },
+    ]
+
+
     return (
         <section id="hero" className={heroSectionStyles}>
             <BackgroundSlider
@@ -36,23 +52,22 @@ const HeroSection = () => {
                 }}
             >
                 {/* Captions in sync with background images*/}
-                <div className={headingContainerStyles}>
-                    <h1>You’ll love what you see. </h1>
-                    <h2>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo.</h2>
-                    <CustomButton>Zistiť viac</CustomButton>
-
-                </div>
-                <div className={headingContainerStyles}>
-                    <h1>It’s your time to shine.</h1>
-                    <h2>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi.</h2>
-                    <CustomButton>Zistiť viac</CustomButton>
-                </div>
-                <div className={headingContainerStyles}>
-                    <h1>Reveal your true self. </h1>
-                    <h2>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion.</h2>
-                    <CustomButton>Zistiť viac</CustomButton>
-
-                </div>
+                {
+                    heroHeadings.map(({ heading, subHeading }, idx) => {
+                        return (
+                            <div
+                                key={idx}
+                                className={headingContainerStyles}
+                                data-sal="slide-right"
+                                data-sal-duration="1800"
+                            >
+                                <h1>{heading}</h1>
+                                <h2>{subHeading}</h2>
+                                <CustomButton>Zistiť viac</CustomButton>
+                            </div>
+                        )
+                    })
+                }
 
             </BackgroundSlider>
         </section >

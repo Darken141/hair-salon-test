@@ -12,8 +12,18 @@ const ContactSection = () => {
 
     return (
         <section id='kontakt' className={contactSectionStyles}>
-            <h2>Zajednajte si u nás termín</h2>
-            <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+            <h2
+                data-sal="fade"
+                data-sal-duration="1800"
+            >Zajednajte si u nás termín</h2>
+            <form
+                name="contact"
+                method="post"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                data-sal="slide-up"
+                data-sal-duration="1800"
+            >
                 {/* You still need to add the hidden input with the form name to your JSX form */}
                 <input type="hidden" name="form-name" value="contact" />
                 <CustomInput
