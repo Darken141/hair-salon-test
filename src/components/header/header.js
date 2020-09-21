@@ -30,11 +30,14 @@ const Header = () => {
   }, [])
 
   useEffect(() => {
+    console.log("PrevScrollPos: " + prevScrollpos)
     window.onscroll = () => {
       let currentScrollPos = window.pageYOffset;
+      console.log("CurrentScrollPos: " + currentScrollPos)
       if (prevScrollpos > currentScrollPos) {
         setShowNav(true)
       } else {
+        if (currentScrollPos <= 0) return
         setShowNav(false)
       }
       setPrevScrollpos(currentScrollPos)
